@@ -27,6 +27,7 @@ const LoanForm = () => {
               value={principal}
               onChange={(e) => setPrincipal(e.target.value)}
               className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
           <div className="mb-4">
@@ -36,6 +37,7 @@ const LoanForm = () => {
               value={rate}
               onChange={(e) => setRate(e.target.value)}
               className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
           <div className="mb-6">
@@ -45,6 +47,7 @@ const LoanForm = () => {
               value={tenor}
               onChange={(e) => setTenor(e.target.value)}
               className="mt-1 p-2 w-full border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+              required
             />
           </div>
           <button
