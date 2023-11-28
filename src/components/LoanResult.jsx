@@ -14,9 +14,9 @@ const LoanResult = () => {
     <div className="bg-white p-8 rounded shadow-md">
       <h1 className="text-3xl font-semibold mb-2">Parent Page</h1>
       <h1 className="text-3xl font-semibold mb-2">Loan Result</h1>
-      <p className="mb-2">Principal: {principal}</p>
-      <p className="mb-2">Rate: {rate}</p>
-      <p className="mb-2">Tenor: {tenor}</p>
+      <p className="mb-2">Principal: ${principal}</p>
+      <p className="mb-2">Rate: {rate}%</p>
+      <p className="mb-2">Tenor: {tenor} months</p>
     </div>
   </div>
   );
