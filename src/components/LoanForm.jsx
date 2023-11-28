@@ -18,6 +18,23 @@ const LoanCalculator = () => {
     return emi;
   };
 
+  const generatePaymentSchedule = (tenor) => {
+    const schedule = [];
+
+    for (let i = 1; i <= tenor; i++) {
+      const paymentDate = new Date();
+      paymentDate.setMonth(paymentDate.getMonth() + i);
+      paymentDate.setDate(20); // Set the payment date to the 20th of each month
+
+      schedule.push({
+        month: i,
+        paymentDate: paymentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+      });
+    }
+
+    return schedule;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -85,6 +102,15 @@ const LoanCalculator = () => {
           </div>
           <h2 className="text-xl font-semibold">Monthly Installment:</h2>
           <p className="text-lg">{`$${monthlyInstallment} per month`}</p>
+
+          <div className="mt-4">
+            <h2 className="text-xl font-semibold">Payment Schedule:</h2>
+            <ul>
+              {generatePaymentSchedule(parseInt(tenor, 10)).map((payment, index) => (
+                <li key={index}>{`Month ${payment.month}: ${payment.paymentDate}`}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </div>
